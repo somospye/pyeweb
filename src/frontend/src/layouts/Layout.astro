@@ -1,22 +1,65 @@
-<!doctype html>
+---
+interface Props {
+	title: string;
+}
+import Header from "../components/Header.astro";
+const { title } = Astro.props as Props;
+---
+
+
+<!doctype html >
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+    <title>PyE | {title}</title>
 	</head>
 	<body>
+    <Header />
 		<slot />
 	</body>
 </html>
 
-<style>
+
+<style is:global>
+  :root{
+    --bg-color: oklch(12.9% 0.042 264.695);
+    --text-color: oklch(98.4% 0.003 247.858);
+    --navbar-background: oklch(20.8% 0.042 265.755);
+    --principal-color: oklch(58.8% 0.158 241.966);
+  }
+  /* Arreglar el theme light luego */
+  [data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #141414;
+    --navbar-background: #D1D1D1;
+    --principal-color: #ffffff;
+    --hover-navbar: #1179C6;
+  }
+
+
+  *,*::before, *::after{
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+    color-scheme: dark light;
 	}
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.2s, color 0.4s
+  } 
+  @media (prefers-color-scheme: dark){
+    }
 </style>
