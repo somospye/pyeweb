@@ -1,5 +1,5 @@
-import type { Counter } from "../../models/counter.type";
+import type { Counter } from "@/models/counter.type";
 
 export const CounterIncrement = (counter: Counter) => {
-	counter.count.set(counter.count.get() + 1);
+  counter.count.set(counter.count.get() + 1);
 };

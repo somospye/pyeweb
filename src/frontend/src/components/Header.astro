@@ -1,0 +1,126 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header>
+  <div class="logo">
+    <Icon name="logo-pye" />
+    <p>Programadores y Estudiantes</p>
+  </div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/cursos">Cursos</a>
+    <a href="/about">Sobre</a>
+    <a href="/cursos">Aprendizaje</a>
+  </nav>
+  <div class="button-login">
+    <a href="/login">
+      Iniciar Sesión
+      <Icon name="user" />
+    </a>
+    <button id="theme-toggle">
+      <Icon name="sun" />
+    </button>
+  </div>
+</header>
+
+<style>
+  header {
+    & a {
+      text-decoration: none;
+      color: var(--text-color)
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 2em;
+    border: none;
+    background-color: var(--navbar-background) ;
+    transition: background 0.2s, color 0.2s;
+
+    /*Seccion 1 del header */
+    & .logo {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+       & p {
+         width: 100%;
+       }
+    }
+
+    & nav {
+      display: flex;
+      height: 20px;
+      margin-right: 9em;
+      gap: 2em;
+
+      & a {
+        transition: 0.1s ease;
+      }
+
+      & a:hover {
+        color: var(--principal-color);
+        cursor: pointer;
+      }
+    }
+
+    & .button-login {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+
+      & a {
+        display: inherit;
+        align-items: inherit;
+        gap: 0.5em;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        border: 2px solid #1179C6;
+        color: #1179C6;
+        transition: 0.15s;
+
+        &:hover {
+          color: var(--text-color);
+          background-color: var(--principal-color);
+          cursor: pointer;
+        }
+
+      }
+      & button {
+        border: none;
+        background: none;
+        color: var(--text-color);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+   
+  [data-icon="logo-pye"] {
+    color: #1179C6;
+    width: 32px; /*Original width: 131px */
+    height: 32px; /*Original height: 139px */
+  }
+
+  [data-icon="sun"] {
+    width: 28px; /* Original width: 24px */
+    height: 28px; /* Original height: 24px */
+  }
+
+  [data-icon="user"] {
+    width: 26px; /* Original width: 24px */
+    height: 26px; /* Original height: 24px */
+  }
+</style>
+
+<script>
+ document.getElementById('theme-toggle')?.addEventListener('click', () => {
+  const html = document.documentElement;
+	const theme = html.getAttribute('data-theme');
+	html.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
+});
+</script>
