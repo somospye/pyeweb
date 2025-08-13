@@ -1,0 +1,32 @@
+---
+---
+<div>
+  <p id="counter">Count: </p>
+  <button id="buttonExample">Click me</button>
+</div>
+
+
+<style>
+</style>
+
+<script>
+  import { counter, CounterIncrement } from "@/store";
+
+  const counterP = document.getElementById("counter");
+  const buttonExample = document.getElementById("buttonExample");
+  
+  if (!(counterP && buttonExample)) {
+      throw new Error("Should element html dont no exist")
+  };
+
+  buttonExample.addEventListener('click', () => {
+    CounterIncrement(counter)
+  });
+
+  counterP.textContent = `Count: ${counter.count.get()}`;
+
+  counter.count.subscribe((count) => {
+      counterP.textContent = `Count: ${count}` 
+  });
+
+</script>

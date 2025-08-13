@@ -3,7 +3,7 @@
 /node_modules
 /build
 /tmp
-node_modules/
+
 # Logs
 logs
 *.log
@@ -32,7 +32,4 @@ lerna-debug.log*
 # jetbrains setting folder
 .idea/
 
-# generated types
-.astro/
-.vscode/
 

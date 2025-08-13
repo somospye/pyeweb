@@ -1,0 +1,16 @@
+{
+	"name": "frontend",
+	"type": "module",
+	"version": "0.0.1",
+	"description": "Web oficial de la comunidad Programadores y Estudiantes (PyE)",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"astro": "^5.12.9",
+		"nanostores": "^1.0.1"
+	}
+}
