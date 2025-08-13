@@ -1,0 +1,28 @@
+{
+	"name": "pye-web",
+	"version": "1.0.0",
+	"description": "Web oficial de la comunidad Programadores y Estudiantes (PyE)",
+	"main": "",
+	"scripts": {
+		"dev": "turbo dev",
+		"build": "turbo build",
+		"fmt": "biome format --write",
+		"fmt:check": "biome format",
+		"lint": "biome lint",
+		"lint:fix": "biome lint --write",
+		"check": "biome check",
+		"check:fix": "biome check --write"
+	},
+	"keywords": [],
+	"author": "Comunidad PyE",
+	"license": "MIT",
+	"packageManager": "pnpm@10.14.0",
+	"workspaces": [
+		"src/*"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "2.1.4",
+		"git-cliff": "^2.10.0",
+		"turbo": "^2.5.5"
+	}
+}
