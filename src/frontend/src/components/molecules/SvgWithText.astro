@@ -1,0 +1,33 @@
+---
+interface Props {
+	text: string;
+	svg: string;
+	className?: string;
+	idC?: string;
+}
+import { Icon } from "astro-icon/components";
+const { text, svg, className = "", idC = "" } = Astro.props as Props;
+---
+
+<div class=`logo ${className}` id={idC}>
+  <Icon name={svg} />
+  <p>{text}</p>
+</div>
+
+<style>
+ .logo {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  & p {
+    width: 100%;
+  }
+  /*adapt to any location by simply placing the class variant ↓ */
+ }
+[data-icon="logo-pye"] {
+  color: #1179C6;
+  width: 32px; /*Original width: 131px */
+  height: 32px; /*Original height: 139px */
+}
+</style>

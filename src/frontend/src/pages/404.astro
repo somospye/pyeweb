@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import pyeChan from "@/assets/pyechan.png";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="404 Not Found">
+  <main>
+    <div>
+      <Icon name="question-mark" class="not-found" />
+      <figure>
+        <Image src={pyeChan} alt="Pyechan" class="pyechan" loading="eager" />
+      </figure>
+    </div>
+    <h2>Página no encontrada</h2>
+  </main>
+</Layout>
+
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 30em;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 3%;
+    width: 100%;
+    
+    div {
+      position: relative;
+      width: 250px;
+      height: 400px;
+
+      & figure {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        & .pyechan {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;;
+        } 
+      }
+      & .not-found {
+        position: absolute;
+        left: 75%;
+        width: 85px; /* Initial Width: 24px */
+        height: 85px; /* Initial Height: 24px */
+      }
+    }
+  }
+</style>
