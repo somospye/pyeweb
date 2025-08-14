@@ -1,6 +1,9 @@
 import { atom } from "nanostores";
-import type { Counter } from "@/models/counter.type.ts";
+import { UserDataEmpty, type User } from "@/models";
 
-export const counter: Counter = {
-  count: atom(0),
-};
+// this is being tested
+
+export const user = atom<User | null>({
+	name: UserDataEmpty.name,
+	isLogged: UserDataEmpty.isLogged,
+});

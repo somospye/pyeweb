@@ -1,0 +1,30 @@
+---
+interface Props {
+	title: string;
+	route: string;
+	className?: string;
+	idC?: string;
+}
+
+const { title, route, className = "", idC = "" } = Astro.props as Props;
+---
+
+<a href=`/${route}` class=`nav ${className}` id={idC}>{title}</a>
+
+<style> 
+.nav {
+  text-decoration: none;
+  color: var(--text-color)
+  transition: 0.1s ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  /*adapt to any location by simply placing the class variant ↓ */
+
+  &.navForHeadera:hover {
+    color: var(--principal-color);
+  }
+}
+</style>

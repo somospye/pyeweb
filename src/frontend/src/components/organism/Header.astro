@@ -1,0 +1,77 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "@/components/atoms/Button.astro";
+import Navbar from "@/components/molecules/NavBar.astro";
+import SvgWithText from "@/components/molecules/SvgWithText.astro";
+---
+
+<header>
+  <SvgWithText text="Programadores y Estudiantes" svg="logo-pye" />
+  <Navbar 
+    navLinks={[
+      { title: "Inicio", route: "" },
+      { title: "Cursos", route: "courses" },
+      { title: "Sobre", route: "about" },
+      { title: "Contáctanos", route: "contact" }
+    ]}
+    classNameNavs="navForHeadera"
+    className="navHeader"
+  />
+  <div class="button-login">
+  <Button title="Iniciar Sesión" className="btn-login">
+    <Icon name="user" slot="after-title" />
+  </Button>
+  <Button idC="theme-toggle">
+    <Icon name="sun" slot="after-title"/>
+  </Button>
+  </div>
+</header>
+
+<style>
+  header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 2em;
+    border: none;
+    background-color: var(--navbar-background) ;
+    transition: background 0.2s, color 0.2s;
+    
+    & .button-login {
+      display: flex;
+      gap: 1em;
+      align-items: center;  
+    }
+  } 
+
+  [data-icon="sun"] {
+    width: 28px; /* Original width: 24px */
+    height: 28px; /* Original height: 24px */
+  }
+
+  [data-icon="user"] {
+    width: 26px; /* Original width: 24px */
+    height: 26px; /* Original height: 24px */
+  }
+</style>
+
+<script is:inline> 
+  const html = document.documentElement;
+
+  document.addEventListener("astro:page-load", () => {
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+	const theme = html.getAttribute('data-theme');
+	html.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
+  localStorage.setItem("theme", theme) 
+  });
+})
+
+const applyTheme = () => {
+  localStorage.theme === "dark"
+  ? html.setAttribute("data-theme", "light")
+  : html.setAttribute("data-theme", "dark");
+}
+  document.addEventListener("astro:after-swap", applyTheme);
+  applyTheme();
+
+</script>

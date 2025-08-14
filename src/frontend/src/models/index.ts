@@ -1,1 +1,1 @@
-export type { counter } from "@/store";
+export { type User, type UserData, UserDataEmpty } from "@/models/user.type";

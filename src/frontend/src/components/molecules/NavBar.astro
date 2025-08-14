@@ -1,0 +1,41 @@
+---
+import NavLink from "@/components/atoms/NavLink.astro";
+
+interface NavLinkInfo {
+  title: string;
+  route: string;
+}
+
+interface Props {
+  navLinks: NavLinkInfo[];
+  className?: string;
+  classNameNavs?: string;
+  idC?: string;
+}
+
+const { 
+  navLinks, 
+  className = "", 
+  idC = "", 
+  classNameNavs = "" 
+} = Astro.props;
+---
+
+<nav class=`navBar ${className}` id={idC}>
+  {navLinks.map((link) => (
+    <NavLink title={link.title} route={link.route} className={classNameNavs} />
+  ))}
+</nav>
+
+
+<style>
+  .navBar {
+    display: flex;
+    height: 20px;
+    gap: 2em;
+
+  &.navHeader {
+    margin-right: 4em; 
+  }      
+}
+</style>
