@@ -1,0 +1,24 @@
+---
+import type { TitleProps } from "@/schemas/components";
+
+const {
+	title,
+	class: className = "",
+	id: idName = "",
+} = Astro.props as TitleProps;
+---
+
+<h2 class=`title ${className}` id={idName}>{title}</h2>
+
+
+<style>
+  .title {
+    margin: 0;
+    font-size: 2em;
+    color: var(--color-text);
+    
+  /*adapt to any location by simply placing the class variant ↓ */
+    &.titleFooter {
+    }
+  }
+</style>

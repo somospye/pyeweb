@@ -1,15 +1,16 @@
 ---
-interface Props {
-	text: string;
-	svg: string;
-	className?: string;
-	idC?: string;
-}
 import { Icon } from "astro-icon/components";
-const { text, svg, className = "", idC = "" } = Astro.props as Props;
+import type { SvgTextProps } from "@/schemas/components";
+
+const {
+	text,
+	svg,
+	class: className = "",
+	id: idName = "",
+} = Astro.props as SvgTextProps;
 ---
 
-<div class=`logo ${className}` id={idC}>
+<div class=`logo ${className}` id={idName}>
   <Icon name={svg} />
   <p>{text}</p>
 </div>
@@ -22,8 +23,17 @@ const { text, svg, className = "", idC = "" } = Astro.props as Props;
 
   & p {
     width: 100%;
+    &:hover {
+      cursor: default;
+    } 
   }
   /*adapt to any location by simply placing the class variant ↓ */
+  &.svgTextFooter {
+    gap: 0.1em;
+    max-width: 6em;
+    flex-direction: column;
+    margin: 0 auto;
+  }
  }
 [data-icon="logo-pye"] {
   color: #1179C6;

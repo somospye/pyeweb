@@ -1,0 +1,45 @@
+---
+import Button from "@/components/atoms/Button.astro";
+import Text from "@/components/atoms/Text.astro";
+import Title from "@/components/atoms/Title.astro";
+import type { DescriptionButtonProps } from "@/schemas/components";
+
+const {
+	class: className = "",
+	id: idName = "",
+	titleComponent,
+	classTitle = "",
+	idTitle = "",
+	textComponent,
+	classText = "",
+	idText = "",
+	textButton,
+	classButton = "",
+	idButton = "",
+} = Astro.props as DescriptionButtonProps;
+---
+
+<div class=`DescriptionButton ${className}` id={idName} >
+  <Title title={titleComponent}  class={classTitle} id={idTitle}/>
+  <Text 
+    text={textComponent}
+    class={classText}
+    id={idText}/>
+    <Button title={textButton} class={classButton} idC={idButton} />
+</div>
+
+
+<style>
+  .DescriptionButton {
+    display: flex;
+    gap: 1.4em;
+
+  /*adapt to any location by simply placing the class variant ↓ */
+    &.descriptionFooter {
+      flex-direction: column;
+      max-width: 60em;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+</style>

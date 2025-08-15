@@ -1,0 +1,33 @@
+---
+import DescriptionWithButton from "@/components/molecules/DescriptionWithButton.astro";
+import SvgWithText from "@/components/molecules/SvgWithText.astro";
+---
+
+<footer>
+  <div>
+    <SvgWithText text="Comunidad" svg="logo-pye" class="svgTextFooter" /> 
+  </div>
+  <div>
+    <DescriptionWithButton
+        titleComponent="THE DEVELOPMENT COLLABORATION CLOUD"
+        textComponent="Unlimited team members. Unlimited projects. Unlimited creativity"
+        textButton="LEARN MORE"
+        class="descriptionFooter"
+        classButton="btnFooter"
+        classTitle="titleFooter"
+        classText="textFooter"
+        /> 
+  </div>
+</footer>
+
+
+<style>
+  footer {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 100%;
+    bottom: 0;
+    background-color: var(--navbar-background);
+  }
+</style>
