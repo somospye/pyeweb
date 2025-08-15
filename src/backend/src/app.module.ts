@@ -8,6 +8,9 @@ import { AppService } from "./app.service";
 	imports: [
 		ServeStaticModule.forRoot({
 			rootPath: join(__dirname, "../../", "frontend/dist/"),
+			serveStaticOptions: {
+				fallthrough: false,
+			},
 		}),
 	],
 	controllers: [AppController],

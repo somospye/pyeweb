@@ -1,0 +1,22 @@
+---
+import type { TextProps } from "@/schemas/components";
+
+const {
+	text,
+	class: className = "",
+	id: idName = "",
+} = Astro.props as TextProps;
+---
+
+<p class=`text ${className}` id={idName}>{text}</p>
+
+<style>
+  .text {
+    font-size: 1em;
+    margin: 0;
+
+  /*adapt to any location by simply placing the class variant ↓ */
+    &.textFooter {
+    }
+  }
+</style>

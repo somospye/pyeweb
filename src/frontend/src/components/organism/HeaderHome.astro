@@ -1,0 +1,110 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "@/components/atoms/Button.astro";
+import Navbar from "@/components/molecules/NavBar.astro";
+import SvgWithText from "@/components/molecules/SvgWithText.astro";
+import type { HeaderHomeProps } from "@/schemas/components";
+
+const { class: className = "", id: idName = "" } =
+	Astro.props as HeaderHomeProps;
+---
+
+<header class={className} id={idName}>
+  <SvgWithText text="Programadores y Estudiantes" svg="logo-pye" />
+  <Navbar 
+    navLinks={[
+      { title: "Inicio", route: "", class: "navForHeadera" },
+      { title: "Cursos", route: "courses", class: "navForHeadera" },
+      { title: "Sobre", route: "about", class: "navForHeadera" },
+      { title: "Contáctanos", route: "contact", class: "navForHeadera" }
+    ]}
+    classNameNavs="navForHeadera"
+    class="navHeader"
+  />
+  <div class="button-login">
+  <Button title="Iniciar Sesión" class="btn-login">
+    <Icon name="user" slot="after-title" />
+  </Button>
+  <Button id="theme-toggle">
+    <Icon  name="sun" class="svg-icon" slot="after-title"/>
+    <Icon  name="moon" class="svg-icon" slot="after-title"/> 
+  </div>
+</header>
+
+<style>
+  header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 2em;
+    border: none;
+    background-color: var(--navbar-background) ;
+    transition: background 0.2s, color 0.2s;
+    
+    & .button-login {
+      display: flex;
+      gap: 1em;
+      align-items: center;  
+    }
+  } 
+
+  [data-icon="sun"] {
+    width: 28px; /* Original width: 24px */
+    height: 28px; /* Original height: 24px */
+    &.sun {
+    display: none;
+    }
+  }
+
+  [data-icon="moon"] {
+    width: 28px; /* Original width: 24px */
+    height: 28px; /* Original height: 24px */
+    &.moon {
+      display: none;
+    }
+  }
+
+  [data-icon="user"] {
+    width: 26px; /* Original width: 24px */
+    height: 26px; /* Original height: 24px */
+  }
+</style>
+
+<script is:inline> 
+  const html = document.documentElement;
+  
+  const getActualTheme = () => {
+    return localStorage.theme
+  }
+
+  const updateIcons = () => {
+    const iconsTheme = document.querySelectorAll(".svg-icon")
+    const theme = getActualTheme() 
+    iconsTheme.forEach(icon => {
+    icon.classList.toggle("sun", theme != "dark")
+    icon.classList.toggle("moon", theme != "light")
+    })
+  } 
+
+  document.addEventListener("astro:page-load", () => {
+    document.getElementById('theme-toggle')?.addEventListener('click', () => {
+	    const theme = html.getAttribute('data-theme');
+      const newTheme = theme === 'dark' ? 'light' : 'dark'; 
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem("theme", newTheme) 
+      updateIcons()
+    });
+  })
+
+  const applyTheme = () => {
+    localStorage.theme === "dark"
+    ?
+    html.setAttribute("data-theme", "dark")
+    :
+    html.setAttribute("data-theme", "light")
+    updateIcons()
+  }
+
+  document.addEventListener("astro:after-swap", applyTheme);
+  applyTheme()
+</script>

@@ -1,15 +1,15 @@
 ---
-interface Props {
-	title: string;
-	route: string;
-	className?: string;
-	idC?: string;
-}
+import type { NavLinkProps } from "@/schemas/components";
 
-const { title, route, className = "", idC = "" } = Astro.props as Props;
+const {
+	title,
+	route,
+	class: className = "",
+	id: idName = "",
+} = Astro.props as NavLinkProps;
 ---
 
-<a href=`/${route}` class=`nav ${className}` id={idC}>{title}</a>
+<a href=`/${route}` class=`nav ${className}` id={idName}>{title}</a>
 
 <style> 
 .nav {

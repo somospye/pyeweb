@@ -2,15 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [1.2.3](https://github.com/DumbNoxx/PyeWeb/compare/v1.2.2...v1.2.3) (2025-08-15)
-
-## [1.2.2](https://github.com/DumbNoxx/PyeWeb/compare/v1.2.1...v1.2.2) (2025-08-15)
-
-## [1.2.1](https://github.com/DumbNoxx/PyeWeb/compare/v1.2.0...v1.2.1) (2025-08-15)
-
-## 1.2.0 (2025-08-15)
-
-
 ### Features
 
 * Add Navbar and config nestjs serve-static ([2e878c3](https://github.com/DumbNoxx/PyeWeb/commit/2e878c309a27298766fce69148ccef7484e8526f))

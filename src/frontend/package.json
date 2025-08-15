@@ -12,6 +12,7 @@
 	"dependencies": {
 		"astro": "^5.12.9",
 		"astro-icon": "^1.1.5",
-		"nanostores": "^1.0.1"
+		"nanostores": "^1.0.1",
+		"sharp": "^0.34.3"
 	}
 }

@@ -1,5 +1,5 @@
 import { atom } from "nanostores";
-import { UserDataEmpty, type User } from "@/models";
+import { type User, UserDataEmpty } from "@/models";
 
 // this is being tested
 
