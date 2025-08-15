@@ -1,10 +1,6 @@
 import type { DefaultProps } from "../defaultProps.schema";
-
-interface NavLinkInfo extends DefaultProps {
-	title: string;
-	route: string;
-}
+import type { NavLinkProps } from "../atoms";
 
 export interface NavBarProps extends DefaultProps {
-	navLinks: NavLinkInfo[];
+  navLinks: NavLinkProps[];
 }
