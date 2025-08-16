@@ -1,6 +1,6 @@
-import type { DefaultProps } from "../defaultProps.schema";
 import type { NavLinkProps } from "../atoms";
+import type { DefaultProps } from "../defaultProps.schema";
 
 export interface NavBarProps extends DefaultProps {
-  navLinks: NavLinkProps[];
+	navLinks: NavLinkProps[];
 }
