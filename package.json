@@ -15,7 +15,7 @@
 		"check:all": "biome format && biome lint && biome check",
 		"changelog": "git-cliff --output CHANGELOG.md",
 		"prepare": "husky install",
-		"release": "commit-and-tag-version"
+		"release": "commit-and-tag-version && git push --tags"
 	},
 	"keywords": [],
 	"author": "Comunidad PyE",
