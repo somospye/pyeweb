@@ -1,6 +1,6 @@
 {
 	"name": "pye-web",
-	"version": "1.2.0",
+	"version": "0.3.1",
 	"description": "Web oficial de la comunidad Programadores y Estudiantes (PyE)",
 	"main": "",
 	"scripts": {
