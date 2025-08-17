@@ -2,13 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [0.3.3](https://github.com/somospye/pyeweb/compare/v0.3.2...v0.3.3) (2025-08-16)
+## [0.3.4](https://github.com/somospye/pyeweb/compare/v0.3.3...v0.3.4) (2025-08-17)
 
 
-### Bug Fixes
+### Features
 
-* **package:** add command push tags ([acea612](https://github.com/somospye/pyeweb/commit/acea612a4177233c4e6d9fd50311915b3cb6257a))
+* **frontend:** add component molecule container navbar with title ([f97bebb](https://github.com/somospye/pyeweb/commit/f97bebbc3d82935743fc9b9a41aa709d08184b22))
 
+## [0.3.3] - 2025-08-16
+
+### 🐛 Bug Fixes
+
+- *(package)* Add command push tags
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.3.3
 ## [0.3.2] - 2025-08-16
 
 ### ⚙️ Miscellaneous Tasks
