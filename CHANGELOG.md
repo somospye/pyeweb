@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.5](https://github.com/somospye/pyeweb/compare/v0.3.4...v0.3.5) (2025-08-17)
+
+
+### Features
+
+* **footer:** re-design footer style ([0f587b2](https://github.com/somospye/pyeweb/commit/0f587b22a64cfd94db70c47e8061bc9dc937d054))
+
 ## [0.3.4](https://github.com/somospye/pyeweb/compare/v0.3.3...v0.3.4) (2025-08-17)
 
 
