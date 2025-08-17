@@ -1,21 +1,21 @@
-# Changelog
+## [0.3.5] - 2025-08-17
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+### 🚀 Features
 
-## [0.3.5](https://github.com/somospye/pyeweb/compare/v0.3.4...v0.3.5) (2025-08-17)
+- *(footer)* Re-design footer style
 
+### ⚙️ Miscellaneous Tasks
 
-### Features
+- *(release)* 0.3.5
+## [0.3.4] - 2025-08-17
 
-* **footer:** re-design footer style ([0f587b2](https://github.com/somospye/pyeweb/commit/0f587b22a64cfd94db70c47e8061bc9dc937d054))
+### 🚀 Features
 
-## [0.3.4](https://github.com/somospye/pyeweb/compare/v0.3.3...v0.3.4) (2025-08-17)
+- *(frontend)* Add component molecule container navbar with title
 
+### ⚙️ Miscellaneous Tasks
 
-### Features
-
-* **frontend:** add component molecule container navbar with title ([f97bebb](https://github.com/somospye/pyeweb/commit/f97bebbc3d82935743fc9b9a41aa709d08184b22))
-
+- *(release)* 0.3.4
 ## [0.3.3] - 2025-08-16
 
 ### 🐛 Bug Fixes
