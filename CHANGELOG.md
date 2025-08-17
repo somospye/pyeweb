@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [0.3.6](https://github.com/somospye/pyeweb/compare/v0.3.5...v0.3.6) (2025-08-17)
+
+
+### Bug Fixes
+
+* **navegation:** fix atribute href in component navlink ([c903bc0](https://github.com/somospye/pyeweb/commit/c903bc00af60a55d272861e6a9387dad55d52234))
+
 ## [0.3.5] - 2025-08-17
 
 ### 🚀 Features
