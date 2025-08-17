@@ -3,7 +3,7 @@ import NavLink from "@/components/atoms/NavLink.astro";
 import type { NavBarProps } from "@/schemas/components";
 
 const {
-	navLinks,
+	navLinks = [],
 	class: className = "",
 	id: idName = "",
 } = Astro.props as NavBarProps;

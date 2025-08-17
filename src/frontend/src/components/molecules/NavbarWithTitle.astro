@@ -1,0 +1,26 @@
+---
+import type { NavBarTextProps } from "@/schemas/components";
+import NavBar from "@/components/molecules/NavBar.astro";
+
+const {
+  title,
+  class: className = "",
+  id: idName = "",
+  navbarList = [],
+} = Astro.props as NavBarTextProps
+---
+
+<!-- An object with the data must be passed to this component. -->
+<div class={className} id={idName}>
+  <h2>{title}</h2>
+  <div>
+    {navbarList.map((item) => (
+    <NavBar navLinks={item.navLinks} 
+    class={item.class}
+    id={item.id}
+    />
+  ))}
+  </div>
+</div>
+
+
