@@ -7,9 +7,14 @@ const {
 	class: className = "",
 	id: idName = "",
 } = Astro.props as NavLinkProps;
+const isHttp = route?.startsWith('http') ?? false;
 ---
 
-<a href=`/${route}` class=`nav ${className}` id={idName}>{title}</a>
+<a href={isHttp ? route : `/${route}`}
+   class=`nav ${className}`
+   id={idName}
+   target={isHttp ? "_blank" : undefined}
+   >{title}</a>
 
 <style> 
 .nav {

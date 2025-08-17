@@ -22,7 +22,7 @@ export const dataFooter = {
     navLinks: [
       { title: "Discord", route: "https://discord.gg/programacion" },
       { title: "Instagram", route: "https://instagram.com/somospye" },
-      { title: "X", route: "x.com" },
+      { title: "X", route: "https://x.com/SomosPyE" },
     ],
     class: "navBarFooter",
   },
