@@ -1,1 +1,1 @@
-export { dataFooter } from "./dataFooter"
+export * from "./dataFooter";

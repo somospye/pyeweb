@@ -1,17 +1,17 @@
 ---
-import type { NavBarTextProps } from "@/schemas/components";
 import NavBar from "@/components/molecules/NavBar.astro";
+import type { NavBarTextProps } from "@/schemas/components";
 
 const {
-  title,
-  class: className = "",
-  id: idName = "",
-  navbarList = [],
-} = Astro.props as NavBarTextProps
+	title,
+	class: className = "",
+	id: idName = "",
+	navbarList,
+} = Astro.props as NavBarTextProps;
 ---
 
 <!-- An object with the data must be passed to this component. -->
-<div class={className} id={idName}>
+<div class=`block-navbar ${className}` id={idName}>
   <h2>{title}</h2>
   <div>
     {navbarList.map((item) => (
@@ -23,4 +23,13 @@ const {
   </div>
 </div>
 
+
+<style>
+  .block-navbar{
+    display: flex;
+    flex-direction: column;
+  /*adapt to any location by simply placing the class variant ↓ */
+  }
+
+</style>
 
