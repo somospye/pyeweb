@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import Button from "@/components/atoms/Button.astro";
 import Navbar from "@/components/molecules/NavBar.astro";
+import NavLink from "@/components/atoms/NavLink.astro";
 import SvgWithText from "@/components/molecules/SvgWithText.astro";
 import type { HeaderHomeProps } from "@/schemas/components";
 
@@ -22,9 +23,9 @@ const { class: className = "", id: idName = "" } =
     class="navHeader"
   />
   <div class="button-login">
-  <Button title="Iniciar Sesión" class="btn-login">
+    <NavLink title="Iniciar Sesión" class="btn-login" route="login" >
     <Icon name="user" slot="after-title" />
-  </Button>
+  </NavLink>
   <Button id="theme-toggle">
     <Icon  name="sun" class="svg-icon" slot="after-title"/>
     <Icon  name="moon" class="svg-icon" slot="after-title"/> 

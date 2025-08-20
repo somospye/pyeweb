@@ -1,0 +1,34 @@
+---
+import type { severalButtonsProps } from "@/schemas/components";
+import NavLink from "@/components/atoms/NavLink.astro";
+import { Icon } from "astro-icon/components";
+
+const {
+  buttons = [],
+  class: className = "",
+  id: idName = "",
+} = Astro.props as severalButtonsProps
+---
+
+<div class=`groupButtons ${className}` id={idName}>
+  {buttons.map(item => (
+  <NavLink  title={item.title} class={item.class} id={item.id} >
+    <Icon name={item.icon} slot="after-title" />
+  </NavLink>
+  ))}
+</div>
+
+
+<style>
+  .groupButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  [data-icon] {
+    width: 24px;
+    height: 24px;
+  }
+
+</style>

@@ -1,0 +1,54 @@
+---
+import type { CardLoginProps  } from "@/schemas/components";
+
+import Title from "@/components/atoms/Title.astro";
+import SubTitle from "@/components/atoms/Text.astro";
+import SeveralButtons from "@/components/molecules/SeveralButtons.astro";
+import { Icon } from "astro-icon/components";
+
+// FIX: Fix design to card Login
+
+const {
+  title,
+  subTitle,
+  buttonList
+} = Astro.props as CardLoginProps
+---
+
+<div class="cardLogin">
+    <Icon name="logo-pye" />
+    <div>
+      <Title title={title} class="title-login" /> 
+      <SubTitle text={subTitle} class="subTitle-login" />
+      <div class="container-buttons">
+        <SeveralButtons buttons={buttonList} /> 
+      </div>
+    </div>
+</div>
+
+
+<style>
+  .cardLogin {
+    border: 2px solid red;
+    max-width: 60em;
+    margin: auto;
+    padding: 5em 2em;
+    background: rgba(48, 48, 48, 0.26);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.7px);
+    -webkit-backdrop-filter: blur(4.7px);
+    border: 1px solid rgba(48, 48, 48, 0.3);    
+    text-align: center;
+  }
+
+  [data-icon="logo-pye"] { 
+    color: #fff;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    margin-bottom: 3.5em;
+    margin-top: 0;
+    width: 43px;
+    height: 43px;
+  }
+</style>
+

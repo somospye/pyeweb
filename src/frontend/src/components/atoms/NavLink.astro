@@ -14,7 +14,8 @@ const isHttp = route?.startsWith("http") ?? false;
    class=`nav ${className}`
    id={idName}
    target={isHttp ? "_blank" : undefined}
-   >{title}</a>
+   >{title}<slot name="after-title" />
+</a>
 
 <style> 
 .nav {
@@ -25,9 +26,46 @@ const isHttp = route?.startsWith("http") ?? false;
   &:hover {
     cursor: pointer;
     color: var(--principal-color);
-  }
+  } 
 
   /*adapt to any location by simply placing the class variant ↓ */
+
+  &.btn-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 2px solid #1179C6;
+    color: #1179C6;
+    background-color: transparent;
+    transition: 0.15s;
+
+    &:hover {
+      color: var(--text-color);
+      background-color: var(--principal-color);
+      cursor: pointer;
+    }
+  }
+
+  &.btn-login-page {
+    display: inherit;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    width: 14em;
+    margin: 0 auto;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    color: #000;
+    transition: 0.15s;
+    background: #fff; 
+
+    &:hover {
+      background-color:#C7C7C7 ;
+      cursor: pointer;
+    }
+  }
 
 }
 </style>

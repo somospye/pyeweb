@@ -1,0 +1,19 @@
+---
+import LayoutLogin from "@/layouts/LayoutLogin.astro"
+import CardLogin from "@/components/organism/CardLogin.astro";
+---
+
+<LayoutLogin title="Login">
+  <CardLogin 
+  title="Inicia sesión en Somos PyE"
+  subTitle="Comunidad enfocada al aprendizaje"
+  buttonList={[
+  {title: "Continuar con Google", class:"btn-login-page", icon:"google"},
+  {title: "Continuar con Github", class:"btn-login-page", icon:"github"},
+  {title: "Continuar con Discord", class:"btn-login-page", icon:"discord-6"},
+  ]}
+  />
+</LayoutLogin>
+
+
+
