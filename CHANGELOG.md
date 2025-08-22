@@ -1,15 +1,19 @@
-# Changelog
+## [0.3.7] - 2025-08-22
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+### 🚀 Features
 
-## [0.3.7](https://github.com/somospye/pyeweb/compare/v0.3.6...v0.3.7) (2025-08-22)
+- *(login)* Add page to login and components button list
+- Re design login page
 
+### 📚 Documentation
 
-### Features
+- Update changelog
 
-* **login:** add page to login and components button list ([6f83a37](https://github.com/somospye/pyeweb/commit/6f83a37cb0108239caf7f4201c8f65c189f7e9e9))
-* re design login page ([37120ad](https://github.com/somospye/pyeweb/commit/37120ad509c87b2f09b8a961ba056cef78220fe0))
+### ⚙️ Miscellaneous Tasks
 
+- Config fix
+- Updates
+- *(release)* 0.3.7
 ## [0.3.6] - 2025-08-17
 
 ### 🐛 Bug Fixes
