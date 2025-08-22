@@ -4,14 +4,14 @@ import type { SvgTextProps } from "@/schemas/components";
 
 const {
 	text,
-	svg,
+	icon,
 	class: className = "",
 	id: idName = "",
 } = Astro.props as SvgTextProps;
 ---
 
 <div class=`logo ${className}` id={idName}>
-  <Icon name={svg} />
+  <Icon name={icon} />
   <p>{text}</p>
 </div>
 

@@ -1,13 +1,13 @@
 ---
-import type { severalButtonsProps } from "@/schemas/components";
-import NavLink from "@/components/atoms/NavLink.astro";
 import { Icon } from "astro-icon/components";
+import NavLink from "@/components/atoms/NavLink.astro";
+import type { severalButtonsProps } from "@/schemas/components";
 
 const {
-  buttons = [],
-  class: className = "",
-  id: idName = "",
-} = Astro.props as severalButtonsProps
+	buttons = [],
+	class: className = "",
+	id: idName = "",
+} = Astro.props as severalButtonsProps;
 ---
 
 <div class=`groupButtons ${className}` id={idName}>
@@ -23,7 +23,7 @@ const {
   .groupButtons {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 1.5em;
   }
 
   [data-icon] {

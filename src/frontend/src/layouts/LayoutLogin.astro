@@ -3,7 +3,6 @@ interface Props {
 	title: string;
 }
 
-import BannerLogin from "@/assets/bannerLogin.png";
 const { title } = Astro.props as Props;
 ---
 
@@ -19,18 +18,28 @@ const { title } = Astro.props as Props;
  	</head>
 	<body>
 		<main>
-      <div style={{
-           backgroundImage: `url(${BannerLogin.src})`,
-           backgroundSize: "cover",
-           backgroundRepeat: "no-repeat",
-           backgroundPosition: "center",
-           width: "100%",
-           minHeight: "100vh",
-           display: "flex",
-           justifyItems: "center"
-           }} >
-			  <slot />
-      </div>
+      <div class="backgroundLogin">
+      <div class="ethereal-trail" style={{ top: "10%" }} />
+      <div class="ethereal-trail" style={{ top: "25%" }} />
+      <div class="ethereal-trail" style={{ top: "45%" }} />
+      <div class="ethereal-trail" style={{ top: "65%" }} />
+      <div class="ethereal-trail" style={{ top: "85%" }} />
+
+      {/* Floating orbs */}
+      <div class="ethereal-orb" style={{ top: "20%", left: "15%", animationDelay: "0s" }} />
+      <div class="ethereal-orb" style={{ top: "60%", left: "80%", animationDelay: "2s" }} />
+      <div class="ethereal-orb" style={{ top: "40%", left: "10%", animationDelay: "4s" }} />
+      <div class="ethereal-orb" style={{ top: "80%", left: "70%", animationDelay: "6s" }} />
+
+      {/* Subtle noise overlay */}
+      <div
+        class="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+    </div>
+      <slot />
 		</main>
 	</body>
 </html>
@@ -49,15 +58,86 @@ const { title } = Astro.props as Props;
 	}
     body {
     background-color: black;
-    color: var(--text-color);
-    transition: background-color 0.2s, color 0.2s;
-
-  } 
-    
-  [data-icon="logo-pye"] {
-    width: 420px;
-    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
+    @keyframes ethereal-drift {
+      0% {
+        transform: translateX(-100vw) translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateX(100vw) translateY(-20vh) rotate(180deg);
+        opacity: 0;
+      }
+    }
+    @keyframes ethereal-pulse {
+      0%,100% {
+        opacity: 0.2;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+      }
+    }
+
+    .backgroundLogin{
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+
+      & .ethereal-trail {
+        position: absolute;
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, oklch(0.6 0.2 270 / 0.6), oklch(1 0 0 / 0.4), transparent);
+        border-radius: 1px;
+        animation: ethereal-drift 25s linear infinite;
+      }
+      & .ethereal-trail:nth-child(2) {
+        animation-delay: -5s;
+        animation-duration: 30s;
+        top: 20%;
+      }
+      & .ethereal-trail:nth-child(3) {
+        animation-delay: -10s;
+        animation-duration: 35s;
+        top: 40%;
+      }
+      & .ethereal-trail:nth-child(4) {
+        animation-delay: -15s;
+        animation-duration: 28s;
+        top: 60%;
+      }
+      & .ethereal-trail:nth-child(5) {
+        animation-delay: -20s;
+        animation-duration: 32s;
+        top: 80%;
+      }
+
+    & .ethereal-orb {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: oklch(1 0 0 / 0.8);
+      border-radius: 50%;
+      animation: ethereal-pulse 4s ease-in-out infinite;
+      }
+    }
     
 </style>
 

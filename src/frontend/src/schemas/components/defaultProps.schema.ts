@@ -1,4 +1,5 @@
 export interface DefaultProps {
-	class?: string;
-	id?: string;
+  class?: string;
+  id?: string;
+  icon?: string;
 }

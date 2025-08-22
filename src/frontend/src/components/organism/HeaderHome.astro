@@ -1,8 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
 import Button from "@/components/atoms/Button.astro";
-import Navbar from "@/components/molecules/NavBar.astro";
 import NavLink from "@/components/atoms/NavLink.astro";
+import Navbar from "@/components/molecules/NavBar.astro";
 import SvgWithText from "@/components/molecules/SvgWithText.astro";
 import type { HeaderHomeProps } from "@/schemas/components";
 
@@ -11,7 +11,7 @@ const { class: className = "", id: idName = "" } =
 ---
 
 <header class={className} id={idName}>
-  <SvgWithText text="Programadores y Estudiantes" svg="logo-pye" />
+  <SvgWithText text="Programadores y Estudiantes" icon="logo-pye" />
   <Navbar 
     navLinks={[
       { title: "Inicio", route: "", class: "navForHeadera" },
@@ -24,7 +24,7 @@ const { class: className = "", id: idName = "" } =
   />
   <div class="button-login">
     <NavLink title="Iniciar Sesión" class="btn-login" route="login" >
-    <Icon name="user" slot="after-title" />
+    <Icon name="user" slot="before-title" />
   </NavLink>
   <Button id="theme-toggle">
     <Icon  name="sun" class="svg-icon" slot="after-title"/>
