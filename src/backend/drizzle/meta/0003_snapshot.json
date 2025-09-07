@@ -1,0 +1,226 @@
+{
+	"id": "c01fa239-a20f-43a6-aaa8-951d11ffb2d3",
+	"prevId": "bd7c7ca7-7492-43ca-bf27-11dff4ce9e3c",
+	"version": "7",
+	"dialect": "postgresql",
+	"tables": {
+		"public.profileInfo": {
+			"name": "profileInfo",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "integer",
+					"primaryKey": true,
+					"notNull": true,
+					"identity": {
+						"type": "always",
+						"name": "profileInfo_id_seq",
+						"schema": "public",
+						"increment": "1",
+						"startWith": "1",
+						"minValue": "1",
+						"maxValue": "2147483647",
+						"cache": "1",
+						"cycle": false
+					}
+				},
+				"metada": {
+					"name": "metada",
+					"type": "jsonb",
+					"primaryKey": false,
+					"notNull": false
+				},
+				"userId": {
+					"name": "userId",
+					"type": "integer",
+					"primaryKey": false,
+					"notNull": false
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {
+				"profileInfo_userId_users_id_fk": {
+					"name": "profileInfo_userId_users_id_fk",
+					"tableFrom": "profileInfo",
+					"tableTo": "users",
+					"columnsFrom": ["userId"],
+					"columnsTo": ["id"],
+					"onDelete": "no action",
+					"onUpdate": "no action"
+				}
+			},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {},
+			"policies": {},
+			"checkConstraints": {},
+			"isRLSEnabled": false
+		},
+		"public.users": {
+			"name": "users",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "integer",
+					"primaryKey": true,
+					"notNull": true,
+					"identity": {
+						"type": "always",
+						"name": "users_id_seq",
+						"schema": "public",
+						"increment": "1",
+						"startWith": "1",
+						"minValue": "1",
+						"maxValue": "2147483647",
+						"cache": "1",
+						"cycle": false
+					}
+				},
+				"name": {
+					"name": "name",
+					"type": "varchar(255)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"age": {
+					"name": "age",
+					"type": "integer",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"email": {
+					"name": "email",
+					"type": "varchar(255)",
+					"primaryKey": false,
+					"notNull": true
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {
+				"users_email_unique": {
+					"name": "users_email_unique",
+					"nullsNotDistinct": false,
+					"columns": ["email"]
+				}
+			},
+			"policies": {},
+			"checkConstraints": {},
+			"isRLSEnabled": false
+		},
+		"public.groups": {
+			"name": "groups",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "integer",
+					"primaryKey": true,
+					"notNull": true,
+					"identity": {
+						"type": "always",
+						"name": "groups_id_seq",
+						"schema": "public",
+						"increment": "1",
+						"startWith": "1",
+						"minValue": "1",
+						"maxValue": "2147483647",
+						"cache": "1",
+						"cycle": false
+					}
+				},
+				"name": {
+					"name": "name",
+					"type": "varchar(255)",
+					"primaryKey": false,
+					"notNull": true
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {},
+			"policies": {},
+			"checkConstraints": {},
+			"isRLSEnabled": false
+		},
+		"public.userToGroups": {
+			"name": "userToGroups",
+			"schema": "",
+			"columns": {
+				"userId": {
+					"name": "userId",
+					"type": "integer",
+					"primaryKey": false,
+					"notNull": false
+				},
+				"groupId": {
+					"name": "groupId",
+					"type": "integer",
+					"primaryKey": false,
+					"notNull": false
+				}
+			},
+			"indexes": {
+				"userIdIndex": {
+					"name": "userIdIndex",
+					"columns": [
+						{
+							"expression": "userId",
+							"isExpression": false,
+							"asc": true,
+							"nulls": "last"
+						}
+					],
+					"isUnique": false,
+					"concurrently": false,
+					"method": "btree",
+					"with": {}
+				}
+			},
+			"foreignKeys": {
+				"userToGroups_userId_users_id_fk": {
+					"name": "userToGroups_userId_users_id_fk",
+					"tableFrom": "userToGroups",
+					"tableTo": "users",
+					"columnsFrom": ["userId"],
+					"columnsTo": ["id"],
+					"onDelete": "no action",
+					"onUpdate": "no action"
+				},
+				"userToGroups_groupId_groups_id_fk": {
+					"name": "userToGroups_groupId_groups_id_fk",
+					"tableFrom": "userToGroups",
+					"tableTo": "groups",
+					"columnsFrom": ["groupId"],
+					"columnsTo": ["id"],
+					"onDelete": "no action",
+					"onUpdate": "no action"
+				}
+			},
+			"compositePrimaryKeys": {
+				"userToGroups_groupId_userId_pk": {
+					"name": "userToGroups_groupId_userId_pk",
+					"columns": ["groupId", "userId"]
+				}
+			},
+			"uniqueConstraints": {},
+			"policies": {},
+			"checkConstraints": {},
+			"isRLSEnabled": false
+		}
+	},
+	"enums": {},
+	"schemas": {},
+	"sequences": {},
+	"roles": {},
+	"policies": {},
+	"views": {},
+	"_meta": {
+		"columns": {},
+		"schemas": {},
+		"tables": {}
+	}
+}
