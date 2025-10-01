@@ -23,6 +23,9 @@ export const dataFooter = {
 			{ title: "Discord", route: "https://discord.gg/programacion" },
 			{ title: "Instagram", route: "https://instagram.com/somospye" },
 			{ title: "X", route: "https://x.com/SomosPyE" },
+			{ title: "Github", route: "https://github.com/somospye" },
+			{ title: "Twitch", route: "https://twitch.tv" },
+			{ title: "Youtube", route: "https://www.youtube.com/@programadoresyestudiantes" }
 		],
 		class: "navBarFooter",
 	},
