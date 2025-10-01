@@ -8,9 +8,9 @@ import LayoutLogin from "@/layouts/LayoutLogin.astro";
   title="Inicia sesión en Somos PyE"
   subTitle="Comunidad enfocada al aprendizaje"
   buttonList={[
-  {title: "Continuar con Google", class:"btn-login-page", icon:"google"},
-  {title: "Continuar con Github", class:"btn-login-page", icon:"github2"},
-  {title: "Continuar con Discord", class:"btn-login-page", icon:"discord2"},
+    {title: "Continuar con Google", class:"btn-login-page", icon:"google", route:"http://localhost:3000/api/auth/google/login"},
+    {title: "Continuar con Github", class:"btn-login-page", icon:"github2"},
+    {title: "Continuar con Discord", class:"btn-login-page", icon:"discord2"},
   ]}
   />
 </LayoutLogin>

@@ -12,7 +12,7 @@ const {
 
 <div class=`groupButtons ${className}` id={idName}>
   {buttons.map(item => (
-  <NavLink  title={item.title} class={item.class} id={item.id} >
+  <NavLink route={item.route} title={item.title} class={item.class} id={item.id} >
     <Icon name={item.icon} slot="after-title" />
   </NavLink>
   ))}

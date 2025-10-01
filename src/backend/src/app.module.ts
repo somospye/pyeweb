@@ -13,10 +13,11 @@ import { PropertyModule } from "./property/property.module";
 @Module({
 	imports: [
 		ServeStaticModule.forRoot({
-			rootPath: join(__dirname, "../../", "frontend/dist/"),
+			rootPath: join(process.cwd(), "src/frontend/dist/"),
 			serveStaticOptions: {
 				fallthrough: false,
 			},
+			exclude: ["/api/*"]
 		}),
 		ConfigModule.forFeature(googleOauthConfig),
 		AuthModule,
