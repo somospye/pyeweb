@@ -17,7 +17,7 @@ import { PropertyModule } from "./property/property.module";
 			serveStaticOptions: {
 				fallthrough: false,
 			},
-			exclude: ["/api/*"]
+			exclude: ["/api/*"],
 		}),
 		ConfigModule.forFeature(googleOauthConfig),
 		AuthModule,
